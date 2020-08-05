@@ -9,8 +9,20 @@
     </div>
     <div class="menu_content">
         <ul>
-            <li><a href="{% url 'index' %}">Home</a></li>
-            <li><a href="{% url 'index' %}">About us</a></li>
+            <li 
+                {% if '/' in request.path %}
+                    class="active"
+                {% else %}
+                    class=""
+                {% endif %}
+            ><a href="{% url 'index' %}">Home</a></li>
+            <li
+                {% if 'about' in request.path %}
+                    class="active"
+                {% else %}
+                    class=""
+                {% endif %}
+            ><a href="{% url 'index' %}">About us</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="{% url 'news' %}">News</a></li>
             <li><a href="{% url 'contact' %}">Contact</a></li>
