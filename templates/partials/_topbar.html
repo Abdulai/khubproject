@@ -24,7 +24,13 @@
                                         class=""
                                     {% endif %}
                                 ><a href="{% url 'about'%}">About us</a></li>
-                                <li><a href="#">Services</a></li>
+                                <li
+                                    {% if 'contact' in request.path %}
+                                        class="active"
+                                    {% else %}
+                                        class=""
+                                    {% endif %}
+                                ><a href="{% url 'contact' %}">Contact</a></li>
                                 <li
                                     {% if 'news' in request.path %}
                                         class="active"
@@ -33,14 +39,19 @@
                                     {% endif %}
                                 ><a href="{% url 'news' %}">News</a></li>
                                 <li
-                                    {% if 'contact' in request.path %}
+                                    {% if 'login' in request.path %}
                                         class="active"
                                     {% else %}
                                         class=""
                                     {% endif %}
-                                ><a href="{% url 'contact' %}">Contact</a></li>
-                                <li><a href="login.html">Login</a></li>
-                                <li><a href="register.html">Become A Member</a></li>
+                                ><a href="#">Login</a></li>
+                                <li
+                                    {% if 'register' in request.path %}
+                                        class="active"
+                                    {% else %}
+                                        class=""
+                                    {% endif %}
+                                ><a href="#">Become A Member</a></li>
                             </ul>
                             
                             <!-- Hamburger -->
