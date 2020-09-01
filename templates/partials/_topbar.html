@@ -39,6 +39,13 @@
                                     {% endif %}
                                 ><a href="{% url 'news' %}">News</a></li>
                                 <li
+                                    {% if 'eventstraining' in request.path %}
+                                        class="active"
+                                    {% else %}
+                                        class=""
+                                    {% endif %}
+                                ><a href="#">Events & Training</a></li>
+                                <li
                                     {% if 'login' in request.path %}
                                         class="active"
                                     {% else %}
