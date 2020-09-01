@@ -1,4 +1,4 @@
 from django.shortcuts import render
 
-def news(request):
+def index(request):
     return render(request, 'news/news.html')
